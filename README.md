@@ -25,7 +25,7 @@ memory=32GB`
 
 ## Contents
 
-A jupyter notebook is provided for ingestion of html data (scraped from ttlg.com/forums) and a basic RAG setup using llamaindex and pgvector as index storage.
+A jupyter notebook is provided for ingestion of html data (scraped from ttlg.com/forums) and a basic RAG setup using llamaindex and pgvector as index storage. HTML rag data is parsed using beautifulsoup4.
 
 By default, this template utilizes bartoski's GGUF quantization of qwen2.5 uncensored 14B instruct model. Tokenization is accomplished using the original quen2.5 14B instruct tokenizer. The embedding model is BAAI's 
 bge-base-en-v1.5 FlagEmbedding. 
