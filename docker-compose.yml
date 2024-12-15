@@ -1,0 +1,32 @@
+services:
+  gpu_notebook:
+    build: .
+    ports:
+      - 80:8888
+    volumes:
+      - ./dist:/dist
+      - ./notebooks:/notebooks
+      - hf_cache:/hf_cache
+    environment:
+      - HF_HUB_CACHE=/hf_cache
+    command: uv run jupyter notebook --notebook-dir=/notebooks --ip 0.0.0.0 --no-browser --allow-root --ServerApp.token='' --ServerApp.password=''
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [ gpu ]  
+  postgres:
+    image: pgvector/pgvector:pg16
+    env_file:
+      - .env
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+volumes:
+  hf_cache:
+  postgres_data:
