@@ -22,3 +22,7 @@
 `[wsl2]
 memory=32GB`
 - This template is built around cpu/cuda. You'll need a gpu that supports CUDA 12.6 and has 16 gb of memory to run at decent speed without making any changes.
+
+## Contents
+
+A jupyter notebook is provided for ingestion of html data (scraped from ttlg.com/forums) and a basic RAG setup using llamaindex and pgvector as index storage.
