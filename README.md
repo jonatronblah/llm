@@ -38,4 +38,17 @@ memory=32GB`
 - This project uses `nvidia/cuda:12.6.2-cudnn-runtime-ubuntu22.04` as a base image. Other CUDA versions, configurations and operating systems can be found on nvidia's CUDA docker repository: https://hub.docker.com/r/nvidia/cuda
 - If you need a sanity check on retrieval, you can always call `llm.complete(<query>)` to use the model instance without RAG.
 
+## Resources
+- N$vidia Container Toolkit
+    - Installation guide: https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html
+    - WSL guide for NCT: https://docs.nvidia.com/cuda/wsl-user-guide/index.html
+- WSL2 installation instructions: https://learn.microsoft.com/en-us/windows/wsl/install
+- llamaindex: https://github.com/run-llama/llama_index
+- llamacpp: https://github.com/abetlen/llama-cpp-python
+- Qwen2.5 Documentation: https://qwen.readthedocs.io/en/latest/index.html
+- Huggingface models used in this example:
+    - https://huggingface.co/bartowski/Qwen2.5-Coder-14B-Instruct-GGUF
+    - https://huggingface.co/bartowski/Qwen2.5-14B-Instruct-GGUF
+
+
 
