@@ -1,0 +1,1 @@
+4.0.5 https://github.com/monome/crow/releases/download/v4.0.5/crow.dfu
