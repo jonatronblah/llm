@@ -14,7 +14,7 @@ This is an example project for running basic RAG applications in Python using th
 ## Contents
 
 Two jupyter notebooks are provided to demo retrieval using the Qwen2.5 family of models, llamacpp, llamaindex, and pgvector:
-- The first uses data scraped from the TTLG forums (ttlg.com/forums), parses the raw HTML and desired tags using beautifulsoup4 and parses document nodes into a single vector index. This example uses bartowski's Qwen-2.5-14B-Instruct 6_K gguf quantization.
+- The first uses data scraped from the TTLG forums (ttlg.com/forums - note that only a small number of posts are captured for retrieval), parses the raw HTML and desired tags using beautifulsoup4 and parses document nodes into a single vector index. This example uses bartowski's Qwen-2.5-14B-Instruct 6_K gguf quantization.
 
 - The second parses the source code of the monome crow software library (https://github.com/monome/crow/). Separate indexes and codesplitting processes are executed for 3 languages and file types: python, lua and C. All three indexes are exposed to the query engine with a llamaindex QueryFusionRetriever. This example uses bartowski's Qwen-2.5-Coder-14B-Instruct 6_K gguf quantization.
 
@@ -36,5 +36,6 @@ bge-base-en-v1.5 FlagEmbedding.
 memory=32GB`
 - This template is built around cpu/cuda. You'll need a gpu that supports CUDA 12.6 and has 16 gb of memory to run at decent speed without making any changes. 
 - This project uses `nvidia/cuda:12.6.2-cudnn-runtime-ubuntu22.04` as a base image. Other CUDA versions, configurations and operating systems can be found on nvidia's CUDA docker repository: https://hub.docker.com/r/nvidia/cuda
+- If you need a sanity check on retrieval, you can always call `llm.complete(<query>)` to use the model instance without RAG.
 
 
