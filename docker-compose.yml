@@ -4,11 +4,11 @@ services:
     ports:
       - 80:8888
     volumes:
-      - ./dist:/dist
       - ./notebooks:/notebooks
       - hf_cache:/hf_cache
-    environment:
-      - HF_HUB_CACHE=/hf_cache
+      - li_cache:/llamaindex_cache
+    env_file:
+      - .env
     command: uv run jupyter notebook --notebook-dir=/notebooks --ip 0.0.0.0 --no-browser --allow-root --ServerApp.token='' --ServerApp.password=''
     deploy:
       resources:
@@ -29,4 +29,5 @@ services:
 
 volumes:
   hf_cache:
+  li_cache:
   postgres_data:

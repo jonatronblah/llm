@@ -13,7 +13,7 @@ COPY --from=ghcr.io/astral-sh/uv:latest /uv /bin/uv
 
 RUN uv python install 3.12.7
 
-WORKDIR /llm
+WORKDIR /setup
 RUN uv venv
 
 RUN uv pip install torch torchvision torchaudio
@@ -26,7 +26,13 @@ uv pip install llama-cpp-python==0.2.90 \
 
 RUN uv pip install llama-index llama-index-llms-huggingface llama-index-llms-huggingface-api llama-index-vector-stores-postgres llama-index-embeddings-huggingface llama-index-llms-llama-cpp
 
-RUN uv pip install huggingface-hub[cli] jupyter psycopg[binary] beautifulsoup4
+RUN uv pip install huggingface-hub[cli] jupyter psycopg[binary] beautifulsoup4 python-dotenv
+
+COPY .env .
+
+RUN uv pip install llama-cpp-python==0.3.4 \
+  --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cu124
+
 
 
 
