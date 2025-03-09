@@ -1,6 +1,7 @@
 uv.lock
 dev/
-
+data/
+*.gguf
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

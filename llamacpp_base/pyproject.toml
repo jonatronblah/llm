@@ -1,0 +1,15 @@
+[project]
+name = "llamacpp-base"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "ipykernel>=6.29.5",
+    "llama-index>=0.12.14",
+    "llama-index-vector-stores-postgres>=0.4.2",
+    "notebook>=7.3.2",
+    "pgvector>=0.3.6",
+    "psycopg[binary]>=3.2.4",
+    "requests>=2.32.3",
+]
